@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>v-cloak</title>
+		<style>
+			[v-cloak]{
+				display: none;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="app">
+			<p v-cloak>{{ msg }}</p>
+			<h4 v-text="msg"></h4>
+			
+			<div>{{msg2}}</div>
+			<div v-text="msg2"></div>
+			<div v-html="msg2"></div>
+			
+			<!--<input type="button" value="按钮" v-bind:title="mytitle + '123'"/>-->
+			
+<!--			<input type="button" value="按钮" :title="mytitle + '123'" v-on:click="alert('hello')"/>
+-->       
+			<input type="button" value="按钮" v-on:click="show" />
+			<input type="button" value="按钮" v-on:mouseover="show" />
+		</div>
+		<script type="text/javascript" src="../js/vue.js" ></script>
+		<script>
+			var vm = new Vue({
+				el:'#app',
+				data:{
+					msg:'123',
+					msg2:'<h1>hhhhhhhhhhhhhhhhhhhhhh哈哈哈</h1>',
+					mytitle:'这是自己定义的title'
+				},
+				methods:{
+					show:function  () {
+						alert('hello');
+					}
+				}
+			})
+		</script>
+	</body>
+</html>
+
+
+

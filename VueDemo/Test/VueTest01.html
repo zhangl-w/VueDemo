@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>hello Vue.js</title>
+		<script type="text/javascript" src="../js/vue.js" ></script>
+	</head>
+	<body>
+		<div id="app">
+			hello:{{ name }}
+			<br />
+			<br />
+			<input v-model="name" />
+		</div>
+		<script>
+			let vm = new Vue({
+				el:"#app",
+				data: {
+					name:"vue.js",
+				}
+			});
+			vm.$data.name="Hello Blog3"
+			vm._data.name="Hello Blog8"
+		</script>
+	</body>
+</html>
